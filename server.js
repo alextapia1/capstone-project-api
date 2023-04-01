@@ -7,7 +7,8 @@ const PORT = process.env.PORT || 8081
 const cors = require("cors");
 const { CORS_ORIGIN } = process.env;
 
-app.use();
+app.use(express.json());
+app.use(express.static('public'))
 
 app.use(cors({origin:CORS_ORIGIN}));
 
