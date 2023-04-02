@@ -1,19 +1,14 @@
 const router = require('express').Router();
+const dateController = require('../controllers/dateController');
 
 
 router
     .route('/')
-    .get()
-    .post()
+    .get(dateController.index)
+    .post(dateController.addDate)
+    .delete(dateController.delete) //ternary operator
+    .patch(dateController.editDate); 
 
-router
-    .route('/')
-    .get()
-    .delete() //ternary operator
-    .patch(); 
-
-
-router.route('/').get();
 
 module.exports = router;
 
