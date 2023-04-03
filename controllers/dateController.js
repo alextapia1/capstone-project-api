@@ -34,7 +34,7 @@ exports.addDate = (req, res) => {
 
     knex('dates')
       .insert(newDate)  
-      .then(() {
+      .then(() => {
         res.status(201).json(newDate);
       })
       .catch((error) => res.status(400).send(`Error creating Date: ${error}`));
