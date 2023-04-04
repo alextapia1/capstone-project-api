@@ -1,9 +1,9 @@
 exports.up = function (knex) {
     return knex.schema.createTable('dates', (table) =>{
         table.uuid('item_id').primary();
-        table.string('category').notNullable();
+        table.string('category').();
         table.string('data').notNullable();
-        table.string('complete').notNullable()
+        table.string('complete').false()
     });
 };
 

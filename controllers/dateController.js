@@ -1,5 +1,5 @@
 const knex = require('knex')(require('../knexfile'));
-
+const { v4: uuid } = require('uuid');
 
 exports.index = (req, res) => {
     knex.select('*')
@@ -30,7 +30,7 @@ exports.delete = (req, res) => {
   }
 
 exports.addDate = (req, res) => {
-    const newDate ={id:uuid(),...req.body}
+    const newDate ={item_id:uuid(),...req.body}
 
     knex('dates')
       .insert(newDate)  
