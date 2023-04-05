@@ -1,8 +1,7 @@
 exports.up = function (knex) {
     return knex.schema.createTable('dates', (table) =>{
         table.uuid('item_id').primary();
-        table.string('category').default('unknown');
-        table.string('data').notNullable();
+        table.string('info').notNullable();
         table.boolean('complete').defaultTo(false)
     });
 };
