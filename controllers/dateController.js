@@ -16,11 +16,11 @@ exports.index = (req, res) => {
       //send bad request status code
     );
 };
-//need ternary operator for both daily and weekly
+
 exports.delete = (req, res) => {
   knex("dates")
     .where({ item_id: item_id })
-    .delete({ data: data })
+    .delete({ info: info })
     .then(() => {
       res.sendStatus(204);
     })
@@ -48,7 +48,7 @@ exports.addDate = (req, res) => {
       })
       .catch((error) => res.status(400).send(`Error creating Date: ${error}`));
     }
-    //create for.each()
+    
 
 };
 
