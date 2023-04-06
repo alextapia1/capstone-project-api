@@ -54,7 +54,7 @@ exports.addDate = (req, res) => {
 
 exports.editDate = (req, res) => {
   knex("dates")
-    .update(req.body)
+    .update(editDate)
     .where({ item_id: item_id })
     .then((rows) => {
       if (!rows) {
@@ -66,6 +66,8 @@ exports.editDate = (req, res) => {
       res.status(400).send(`Error updating Date with id:  ${item_id} ${err}`)
     );
 };
+
+
 
 // ternary operator for both daily and weekly
 // const deleteColumn = dailyOrWeekly === 'daily' ? 'daily' : 'weekly';
