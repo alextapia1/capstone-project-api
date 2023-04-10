@@ -12,9 +12,6 @@ app.use(express.static('public'))
 
 app.use(cors({origin:CORS_ORIGIN}));
 
-// const warehousesRoute = require('./routes/warehouseRoute');
-// app.use('/warehouses', warehousesRoute);
-
 const dateRoute = require('./routes/dateRoute')
 app.use('/dates', dateRoute);
 

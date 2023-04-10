@@ -31,27 +31,20 @@ exports.delete = (req, res) => {
 };
 
 exports.addDate = (req, res) => {
-
- // for (let i =0; i< req.body.daily.length; i++){
-
-    const newDate = {
-      item_id: uuid(),
-      info: req.body.daily[0],
-      category: req.body.daily[1],
-      complete: false,
+   const newDate = {
+     item_id: uuid(),
+     info: req.body.daily[0],
+     category: req.body.daily[1],
+     complete: false,
     };
     
     knex("dates")
       .insert(newDate)
       .then(() => {
-       if (i === req.body.daily.length +1)
-        //if (info != "")
         res.status(201).json(newDate);
       })
       .catch((error) => res.status(400).send(`Error creating Date: ${error}`));
- //   }
-    
-
+ 
 };
 
 exports.editDate = (req, res) => {
