@@ -62,13 +62,3 @@ exports.editDate = (req, res) => {
     );
 };
 
-
-
-// ternary operator for both daily and weekly
-// const deleteColumn = dailyOrWeekly === 'daily' ? 'daily' : 'weekly';
-
-// knex('my_table')
-//   .where('id', id)
-//   .update({
-//     [deleteColumn]: null
-//   })

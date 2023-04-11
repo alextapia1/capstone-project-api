@@ -6,7 +6,7 @@ router
     .route('/')
     .get(dateController.index)
     .post(dateController.addDate)
-    .delete(dateController.delete) //ternary operator
+    .delete(dateController.delete) 
     .put(dateController.editDate); 
 
 module.exports = router;
